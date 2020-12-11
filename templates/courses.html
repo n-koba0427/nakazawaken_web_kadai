@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+
+
+{% load static %}
+
+
+{% block header %}
+    <link href="{% static 'css/map.css' %}" rel="stylesheet">
+{% endblock header %}
+
+
+{% block content %}
+<form action="" method="get">
+    <input name="s" value="{{ request.GET.query }}" type="text">
+    <button type="submit">検索する</button>
+</form>
+{% for item in object_list %}
+    <ul>
+        <li>
+            <div class="corse">
+                <a href="{% url 'all_list' item.id %}" >{{ item.name }}</a>
+            </div>
+        </li>
+    </ul> 
+{% endfor %}
+<a href="{% url 'courses_create' %}">授業を追加する</a>
+{% endblock content %}

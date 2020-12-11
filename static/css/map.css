@@ -1,0 +1,13 @@
+.content{
+    padding: 0 20px;
+}
+
+.content img{
+    width: 100%;
+    max-width: 700px;
+    margin: 20px 0;
+}
+
+.content p{
+    text-align: justify;
+}

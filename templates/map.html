@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+
+
+{% load static %}
+
+
+{% block header %}
+    <link href="{% static 'css/map.css' %}" rel="stylesheet">
+{% endblock header %}
+
+
+{% block content %}
+<div class="content">
+    <center>
+        <img src="{% static 'images/map.png' %}" alt="">
+    </center>
+
+    <p>
+        We are a research group in the Nakazawa Lab dedicated to converting the latest research in machine intelligence into practical applications that can solve real world problems. Currently, we are mainly focused on creating systems for cities and the home with deep neural networks, which allow modeling of highly complex patterns and phenomena. With the amount of data modern systems generate and data already available online, there is a high demand to take advantage of this and potential to create more intelligent software. Our group is still in its infancy, and we are looking for student researchers who are passionate about bringing developing fields to the common people and improving their lives.
+    </p>
+</div>
+{% endblock content %}

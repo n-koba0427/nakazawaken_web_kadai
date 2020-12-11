@@ -1,0 +1,50 @@
+{% extends 'main.html' %}
+
+
+{% load static %}
+
+
+{% block header %}
+    <link href="{% static 'css/all_list.css' %}" rel="stylesheet">
+{% endblock header %}
+
+
+{% block content %}
+
+<a href="{% url 'courses' %}">戻る</a>
+
+<div class="reload_btns">
+    <p>自動更新</p>
+    <form action="" method="get">
+        <input name="r" value="t" type="text" style="display: none;">
+        <button type="submit">ON</button>
+    </form>
+    <form action="" method="get">
+        <input name="r" value="f" type="text" style="display: none;">
+        <button type="submit">OFF</button>
+    </form>
+</div>
+
+<a href="{% url 'create' key %}">コメントを書く</a>
+{% for item in object_list reversed %}
+    <ul>
+        <li>
+            <div class="toko">
+                {{ item.content }}
+                {{ item.postdate }}s
+            </div>
+        </li>
+    </ul> 
+{% endfor %}
+
+<script>
+    if (window.location.search == '?r=t'){
+        document.write('kita')
+        const timer = 1000    // ミリ秒で間隔の時間を指定
+        window.addEventListener('load',function(){
+            setInterval('location.reload()',timer);
+        });
+    } 
+</script>
+{% endblock content %}
+
